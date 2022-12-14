@@ -9,7 +9,7 @@
  */
 
 #ifndef  APP_VERSION
-#   define APP_VERSION "1.2.5"
+#   define APP_VERSION "1.2.6"
 #endif
 
 #ifdef GIT

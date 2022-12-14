@@ -24,14 +24,5 @@
 int main(int argc, char *argv[])
 {
     MountTrayApp app(argc, argv);
-    QString sLocPath = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
-    QTranslator *translator = new QTranslator(0);
-    if (auswertung == 0)
-        translator->load(QString("MountTray"+ QLocale::system().name()), sLocPath);
-    if (auswertung != 0) 
-       translator->load(language_, sLocPath);
-     app.installTranslator(translator);
-     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8")); 
-
     return app.exec();
 }

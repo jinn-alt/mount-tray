@@ -30,6 +30,16 @@
 MountTrayApp::MountTrayApp(int & argc, char ** argv) :
     QApplication(argc, argv)
 {
+
+    QString sLocPath = QString("/usr/share/mount-tray/translations");
+
+    QTranslator *translator = new QTranslator();
+    translator->load(QString("MountTray_"+ QLocale::system().name()), sLocPath);
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8")); 
+
+    installTranslator(translator);
+
+
     setOrganizationName(QLatin1String("HatredsLogPlace"));
     setOrganizationDomain(QLatin1String("htrd.su"));
     setApplicationName(QLatin1String("MountTray"));
